@@ -1,0 +1,14 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] local_file.literature" [label = "local_file.literature", shape = "box"]
+		"[root] provider.local" [label = "provider.local", shape = "diamond"]
+		"[root] local_file.literature" -> "[root] provider.local"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] local_file.literature"
+		"[root] provider.local (close)" -> "[root] local_file.literature"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider.local (close)"
+	}
+}
+
