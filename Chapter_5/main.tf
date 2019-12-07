@@ -1,3 +1,6 @@
+# Configuring access to AZURE
+# https://www.terraform.io/docs/providers/azurerm/guides/service_principal_client_secret.html
+
 resource "azurerm_resource_group" "default" { 
   name     = var.namespace
   location = var.region 
